@@ -31,75 +31,57 @@ var $green = $(".green");
 var $orange = $(".orange");
 var $red = $(".red");
 
-// Function to turn light green
+// Function to remove green and turn light orange
 
-var lightGreen = function() {
-  console.log("light green");
-  $green.css({
-    background: "green"
-  });
-};
-
-// Function to remove green light
-
-var removeGreen = function() {
-  console.log("no green");
+var lightOrange = function() {
   $green.css({
     background: "none"
   });
-};
-
-// Function to turn light orange
-
-var lightOrange = function() {
-  console.log("light orange");
   $orange.css({
     background: "orange"
   });
 };
 
-// Function to remove orange light
-
-var removeOrange = function() {
-  console.log("no orange");
+// Function to remove orange and turn light red
+var lightRed = function() {
   $orange.css({
     background: "none"
   });
-};
-
-// Function to turn light red
-var lightRed = function() {
-  console.log("light red");
   $red.css({
     background: "red"
   });
 };
 
-// Function to remove red light
+// Function to remove red light and turn green
 
-var removeRed = function() {
-  console.log("no red");
+var lightGreen = function() {
   $red.css({
     background: "none"
   });
+  $green.css({
+    background: "green"
+  });
 };
 
-// Functions to change color of traffic lights
+// Timers
 
-// Green light to orange light
-var greenToOrange = function() {
-  removeGreen();
-  lightOrange();
+// Light to orange to be called after 4 mins 30 secs (for testing purposes set to 20 secs)
+// Kick off light red timer function
+var traffic_light_orange = function() {
+  window.setTimeout(lightOrange, 20000);
+  window.setTimeout(traffic_light_red, 20000);
 };
 
-// Orange light to red light
-var OrangeToRed = function() {
-  removeOrange();
-  lightRed();
+// Light to red to be called after 30 secs (for testing 10 secs)
+// Kick off light green timer function
+var traffic_light_red = function() {
+  window.setTimeout(lightRed, 10000);
+  window.setTimeout(traffic_light_green, 10000);
 };
 
-// Red light to green light
-var RedToGreen = function() {
-  removeRed();
-  lightGreen();
+// Light green to be called after 5 mins ( for testing 30 second)
+// Kick off light orange function
+var traffic_light_green = function() {
+  window.setTimeout(lightGreen, 30000);
+  window.setTimeout(traffic_light_orange, 30000);
 };
