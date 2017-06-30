@@ -1,16 +1,3 @@
-// You are required to provide the code for an application that simulates a set of traffic lights at
-//
-// an intersection.
-//
-// The traffic lights are designated (N, S) and (E, W) like a compass.
-//
-// Requirements
-//
-// The lights change automatically every 5 minutes.
-//
-// When switching from green to red, the yellow light must be displayed for 30 seconds prior to it
-//
-// switching to red and the opposite direction switching to green from red.
 //
 // You're not required to optimize, just focus on a functional approach to requirements Provide
 //
@@ -18,70 +5,139 @@
 //
 // You should provide unit tests for your solution.
 
-// Plan of attack
-// Create one traffic light, that changes from green to orange to red, within specified times
-// Add simple css to have a visual guide
-// Unit test one traffic light. Create output for one traffic light for period between 9am and 9:30am.
-// Then duplicate this for other traffic light.
-// Use same function for EW traffic lights, opposite color switching
+// Declare variables for North South lights
 
-// Declare variables for lights
+var $greenOne = $(".greenOne");
+var $orangeOne = $(".orangeOne");
+var $redOne = $(".redOne");
 
-var $green = $(".green");
-var $orange = $(".orange");
-var $red = $(".red");
+// Declare variables for East West lights
+
+var $greenTwo = $(".greenTwo");
+var $orangeTwo = $(".orangeTwo");
+var $redTwo = $(".redTwo");
+
+//North South Traffic Lights color change functions
 
 // Function to remove green and turn light orange
 
-var lightOrange = function() {
-  $green.css({
+var lightOrangeOne = function() {
+  $greenOne.css({
     background: "none"
   });
-  $orange.css({
+  $orangeOne.css({
     background: "orange"
   });
 };
 
 // Function to remove orange and turn light red
-var lightRed = function() {
-  $orange.css({
+var lightRedOne = function() {
+  $orangeOne.css({
     background: "none"
   });
-  $red.css({
+  $redOne.css({
     background: "red"
   });
 };
 
 // Function to remove red light and turn green
 
-var lightGreen = function() {
-  $red.css({
+var lightGreenOne = function() {
+  $redOne.css({
     background: "none"
   });
-  $green.css({
+  $greenOne.css({
     background: "green"
   });
 };
 
-// Timers
+// East West Traffic Light color change functions
 
-// Light to orange to be called after 4 mins 30 secs (for testing purposes set to 20 secs)
-// Kick off light red timer function
-var traffic_light_orange = function() {
-  window.setTimeout(lightOrange, 20000);
-  window.setTimeout(traffic_light_red, 20000);
+// Function to remove red light and turn green
+
+var lightGreenTwo = function() {
+  $redTwo.css({
+    background: "none"
+  });
+  $greenTwo.css({
+    background: "green"
+  });
 };
 
-// Light to red to be called after 30 secs (for testing 10 secs)
-// Kick off light green timer function
-var traffic_light_red = function() {
-  window.setTimeout(lightRed, 10000);
-  window.setTimeout(traffic_light_green, 10000);
+// Function to remove green and turn light orange
+
+var lightOrangeTwo = function() {
+  $greenTwo.css({
+    background: "none"
+  });
+  $orangeTwo.css({
+    background: "orange"
+  });
 };
 
-// Light green to be called after 5 mins ( for testing 30 second)
-// Kick off light orange function
-var traffic_light_green = function() {
-  window.setTimeout(lightGreen, 30000);
-  window.setTimeout(traffic_light_orange, 30000);
+// Function to remove orange and turn light red
+var lightRedTwo = function() {
+  $orangeTwo.css({
+    background: "none"
+  });
+  $redTwo.css({
+    background: "red"
+  });
 };
+
+// North and south traffic timers.
+
+// Sets a timeout for light to change from green to orange in 4 mins 30 secs (set to 20 seconds for testing purposes)
+// Trigger the next function traffic light red to run after 4 mins 30 secs (set to 20 seconds for testing)
+
+var traffic_light_orange_one = function() {
+  window.setTimeout(lightOrangeOne, 20000);
+  window.setTimeout(traffic_light_red_one, 20000);
+};
+
+// Sets a timeout for the light to chnage from orange to red in 30 secs (set to 10 secs for testing)
+// Trigger the next function for the traffic light to go from red to green.
+
+var traffic_light_red_one = function() {
+  window.setTimeout(lightRedOne, 10000);
+  window.setTimeout(traffic_light_green_one, 10000);
+};
+
+// Sets a timeout for the light to change from red to green in 5 mins (30 secs for testing)
+// Trigger the next function for the traffic light to go from green to orange.
+
+var traffic_light_green_one = function() {
+  window.setTimeout(lightGreenOne, 30000);
+  window.setTimeout(traffic_light_orange_one, 30000);
+};
+
+// Timer end for north south //
+
+// East and west traffic light timers //
+
+// Sets a timeout for the light to change from red to green in 5 mins (30 secs for testing)
+// Trigger the next function for the traffic light to go from green to orange.
+
+var traffic_light_green_two = function() {
+  window.setTimeout(lightGreenTwo, 30000);
+  window.setTimeout(traffic_light_orange_two, 30000);
+};
+
+// Sets a timeout for light to change from green to orange in 4 mins 30 secs (set to 20 seconds for testing purposes)
+// Trigger the next function traffic light red to run after 4 mins 30 secs (set to 20 seconds for testing)
+
+var traffic_light_orange_two = function() {
+  window.setTimeout(lightOrangeTwo, 20000);
+  window.setTimeout(traffic_light_red_two, 20000);
+};
+
+// Sets a timeout for the light to chnage from orange to red in 30 secs (set to 10 secs for testing)
+// Trigger the next function for the traffic light to go from red to green.
+
+var traffic_light_red_two = function() {
+  window.setTimeout(lightRedTwo, 10000);
+  window.setTimeout(traffic_light_green_two, 10000);
+};
+
+traffic_light_orange_one();
+traffic_light_green_two();

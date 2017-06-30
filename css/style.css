@@ -12,6 +12,14 @@
   margin: 10px auto;
 }
 
-.green {
+.two {
+  display: inline-block;
+}
+
+.greenOne {
   background: green;
+}
+
+.redTwo {
+  background: red;
 }
