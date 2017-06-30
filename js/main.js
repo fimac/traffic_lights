@@ -48,3 +48,38 @@ var removeGreen = function() {
     background: "none"
   });
 };
+
+// Function to turn light orange
+
+var lightOrange = function() {
+  console.log("light orange");
+  $orange.css({
+    background: "orange"
+  });
+};
+
+// Function to remove orange light
+
+var removeOrange = function() {
+  console.log("no orange");
+  $orange.css({
+    background: "none"
+  });
+};
+
+// Function to turn light red
+var lightRed = function() {
+  console.log("light red");
+  $red.css({
+    background: "red"
+  });
+};
+
+// Function to remove red light
+
+var removeRed = function() {
+  console.log("no red");
+  $red.css({
+    background: "none"
+  });
+};
