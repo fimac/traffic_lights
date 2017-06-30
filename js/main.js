@@ -83,3 +83,23 @@ var removeRed = function() {
     background: "none"
   });
 };
+
+// Functions to change color of traffic lights
+
+// Green light to orange light
+var greenToOrange = function() {
+  removeGreen();
+  lightOrange();
+};
+
+// Orange light to red light
+var OrangeToRed = function() {
+  removeOrange();
+  lightRed();
+};
+
+// Red light to green light
+var RedToGreen = function() {
+  removeRed();
+  lightGreen();
+};
