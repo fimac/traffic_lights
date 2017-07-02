@@ -139,5 +139,8 @@ var traffic_light_red_two = function() {
   window.setTimeout(traffic_light_green_two, 10000);
 };
 
+//Kick off traffic light sequences for north/south
 traffic_light_orange_one();
+
+// and east/west lights.
 traffic_light_green_two();
