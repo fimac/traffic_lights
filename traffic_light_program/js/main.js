@@ -1,10 +1,3 @@
-//
-// You're not required to optimize, just focus on a functional approach to requirements Provide
-//
-// the output for the light changes which occur during the period between 9am and 9:30am.
-//
-// You should provide unit tests for your solution.
-
 // Declare variables for North South lights
 
 var $greenOne = $(".greenOne");
@@ -91,24 +84,36 @@ var lightRedTwo = function() {
 // Trigger the next function traffic light red to run after 4 mins 30 secs (set to 20 seconds for testing)
 
 var traffic_light_orange_one = function() {
-  window.setTimeout(lightOrangeOne, 20000);
-  window.setTimeout(traffic_light_red_one, 20000);
+  window.setTimeout(lightOrangeOne, 270000);
+  window.setTimeout(traffic_light_red_one, 270000);
+  console.log(
+    "light changed to green north/south lights at " +
+      new Date().toLocaleTimeString()
+  );
 };
 
 // Sets a timeout for the light to chnage from orange to red in 30 secs (set to 10 secs for testing)
 // Trigger the next function for the traffic light to go from red to green.
 
 var traffic_light_red_one = function() {
-  window.setTimeout(lightRedOne, 10000);
-  window.setTimeout(traffic_light_green_one, 10000);
+  window.setTimeout(lightRedOne, 30000);
+  window.setTimeout(traffic_light_green_one, 30000);
+  console.log(
+    "light changed to orange north/south lights at " +
+      new Date().toLocaleTimeString()
+  );
 };
 
 // Sets a timeout for the light to change from red to green in 5 mins (30 secs for testing)
 // Trigger the next function for the traffic light to go from green to orange.
 
 var traffic_light_green_one = function() {
-  window.setTimeout(lightGreenOne, 30000);
-  window.setTimeout(traffic_light_orange_one, 30000);
+  window.setTimeout(lightGreenOne, 300000);
+  window.setTimeout(traffic_light_orange_one, 300000);
+  console.log(
+    "light changed to red north/south lights at " +
+      new Date().toLocaleTimeString()
+  );
 };
 
 // Timer end for north south //
@@ -119,24 +124,36 @@ var traffic_light_green_one = function() {
 // Trigger the next function for the traffic light to go from green to orange.
 
 var traffic_light_green_two = function() {
-  window.setTimeout(lightGreenTwo, 30000);
-  window.setTimeout(traffic_light_orange_two, 30000);
+  window.setTimeout(lightGreenTwo, 300000);
+  window.setTimeout(traffic_light_orange_two, 300000);
+  console.log(
+    "light changed to red east/west lights at " +
+      new Date().toLocaleTimeString()
+  );
 };
 
 // Sets a timeout for light to change from green to orange in 4 mins 30 secs (set to 20 seconds for testing purposes)
 // Trigger the next function traffic light red to run after 4 mins 30 secs (set to 20 seconds for testing)
 
 var traffic_light_orange_two = function() {
-  window.setTimeout(lightOrangeTwo, 20000);
-  window.setTimeout(traffic_light_red_two, 20000);
+  window.setTimeout(lightOrangeTwo, 270000);
+  window.setTimeout(traffic_light_red_two, 270000);
+  console.log(
+    "light changed to green east/west lights at " +
+      new Date().toLocaleTimeString()
+  );
 };
 
 // Sets a timeout for the light to chnage from orange to red in 30 secs (set to 10 secs for testing)
 // Trigger the next function for the traffic light to go from red to green.
 
 var traffic_light_red_two = function() {
-  window.setTimeout(lightRedTwo, 10000);
-  window.setTimeout(traffic_light_green_two, 10000);
+  window.setTimeout(lightRedTwo, 30000);
+  window.setTimeout(traffic_light_green_two, 30000);
+  console.log(
+    "light changed to orange east/west lights at " +
+      new Date().toLocaleTimeString()
+  );
 };
 
 //Kick off traffic light sequences for north/south
